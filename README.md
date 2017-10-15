@@ -9,7 +9,7 @@ Fitness Frog is an exercise tracking application written in C#. The user can kee
 ### Usage
 ```
 # clone this repo
-$ git clone https://github.com/seanpierce/fitnessFrog/blob/master/Program.cs
+$ git clone https://github.com/seanpierce/fitnessFrog
 # navigate into repo
 $ cd fitnessFrog
 # run the exe file using mono
