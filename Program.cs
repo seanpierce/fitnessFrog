@@ -7,9 +7,9 @@ namespace SeanPierce.FitnessFrog
     static void Main()
     {
       int runningTotal = 0;
-      bool continueGoing = true;
+      bool keepGoing = true;
 
-      while (continueGoing)
+      while (keepGoing)
       {
         // Prompt user for minutes exercised
         Console.Write("Enter how many minutes you exercised, or type \"quit\" to exit: ");
@@ -18,30 +18,44 @@ namespace SeanPierce.FitnessFrog
 
         if (entry == "quit")
         {
-          continueGoing = false;
+          keepGoing = false;
         }
         else
         {
-          int minutes = int.Parse(entry);
 
-          if (minutes <= 10)
+          try
           {
-            Console.WriteLine("Better than nothing, right?");
+            int minutes = int.Parse(entry);
+            
+            if (minutes <= 0)
+            {
+              Console.WriteLine(minutes + " is not an accepable value.");
+              continue;
+            }
+            else if (minutes <= 10)
+            {
+              Console.WriteLine("Better than nothing, right?");
+            }
+            else if (minutes <= 30)
+            {
+              Console.WriteLine("Way to go!");
+            }
+            else if (minutes <= 60)
+            {
+              Console.WriteLine("You're doing great!");
+            }
+            else
+            {
+              Console.WriteLine("Holy Cow! Slow down!");
+            }
+            // Add minutes exercised to total
+            runningTotal = runningTotal + minutes;
           }
-          else if (minutes <= 30)
+          catch (FormatException)
           {
-            Console.WriteLine("Way to go!");
+            Console.WriteLine("That is not valid input.");
+            continue;
           }
-          else if (minutes <= 60)
-          {
-            Console.WriteLine("You're doing great!");
-          }
-          else
-          {
-            Console.WriteLine("Holy Cow! Slow down!");
-          }
-          // Add minutes exercised to total
-          runningTotal = runningTotal + minutes;
 
           // Display total minutes exercised to the screen
           Console.WriteLine("You've exercised for " + runningTotal + " minutes.");
