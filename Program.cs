@@ -6,7 +6,7 @@ namespace SeanPierce.FitnessFrog
   {
     static void Main()
     {
-      int runningTotal = 0;
+      double runningTotal = 0;
       bool keepGoing = true;
 
       while (keepGoing)
@@ -16,7 +16,7 @@ namespace SeanPierce.FitnessFrog
 
         string entry = Console.ReadLine();
 
-        if (entry == "quit")
+        if (entry.ToLower() == "quit")
         {
           keepGoing = false;
         }
@@ -25,8 +25,8 @@ namespace SeanPierce.FitnessFrog
 
           try
           {
-            int minutes = int.Parse(entry);
-            
+            double minutes = double.Parse(entry);
+
             if (minutes <= 0)
             {
               Console.WriteLine(minutes + " is not an accepable value.");
