@@ -3,8 +3,10 @@
 Fitness Frog is an exercise tracking application written in C#. The user can keep a running total of the time they've spent working out, with encouragement from the program and user-friendly input error handling.
 
 ### Dependencies
-* .NET (<a href="https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers">install .Net here</a>)
+* .NET (<a href="https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers">download here</a>)
 * If using MacOS, install <a href="http://www.mono-project.com/docs/about-mono/languages/csharp/">Mono compiler</a>
+
+Or, grab all dependencies with Visual Studio (<a href="https://www.visualstudio.com/">download here</a>)
 
 ### Usage
 ```
